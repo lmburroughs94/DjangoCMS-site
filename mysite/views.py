@@ -17,3 +17,12 @@ def faq(request):
 
 def blog_home(request):
     return render(request, "blog-home.html")
+
+def blog_post(request):
+    return render(request, "blog-post.html")
+
+def portfolio_overview(request):
+    return render(request, "portfolio-overview.html")
+
+def portfolio_item(request):
+    return render(request, "portfolio-item.html")
