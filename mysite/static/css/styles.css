@@ -639,6 +639,7 @@ progress {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
+  border-bottom: 11px solid white;
 }
 
 @media (min-width: 576px) {
@@ -3776,6 +3777,7 @@ textarea.form-control-lg {
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
+  border-bottom: 13px solid white;
 }
 
 .navbar-nav {
