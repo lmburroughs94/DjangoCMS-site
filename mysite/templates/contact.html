@@ -17,6 +17,7 @@
         {% render_block "css" %}
     </head>
     <body class="d-flex flex-column">
+        {% cms_toolbar %}
         <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -29,7 +30,7 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'base' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li>
+                           <!-- <li class="nav-item"><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li> -->
                             <li class="nav-item"><a class="nav-link" href="{% url 'faq' %}">FAQ</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
@@ -65,7 +66,7 @@
       
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
-                                        <div>Hello! For business inquires I can be reached via email at *email* or via github at *github link*</div>
+                                        <div>Hello! For business inquires I can be reached via email at *business email* or via github at *github link* and linkedin @ *linkedin address*</div>
                                     </div>
 
                     <!-- Contact cards-->
@@ -89,6 +90,10 @@
                 </div>
             </div>
         </footer>
-      
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        {% render_block "js" %}
     </body>
 </html>
