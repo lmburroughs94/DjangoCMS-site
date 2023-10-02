@@ -36,7 +36,6 @@
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
                                     <li><a class="dropdown-item" href="{% url 'blog-home' %}">Blog Home</a></li>
-                                    <li><a class="dropdown-item" href="{% url 'blog-post' %}">Blog Post</a></li>
                                 </ul>
                                 {% block content %}{% endblock content %}
                             </li>
@@ -54,7 +53,7 @@
             <!-- Page Content-->
             <section class="py-5">
                 <div class="container px-5">
-                    <h1 class="fw-bolder fs-5 mb-4">My Blog</h1>
+                    <h1 class="fw-bolder fs-5 mb-4">Blog Home </h1>
                     <div class="card border-0 shadow rounded-3 overflow-hidden">
                         <div class="card-body p-0">
                             <div class="row gx-0">
@@ -63,8 +62,8 @@
                                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                         <div class="h2 fw-bolder">Article heading goes here</div>
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus ab doloremque, qui doloribus ea officiis...</p>
-                                        <a class="stretched-link text-decoration-none" href="#!">
-                                            Read more
+                                        <a class="stretched-link text-decoration-none" href="{% url 'blog-list' %}">
+                                            Show All Blogs
                                             <i class="bi bi-arrow-right"></i>
                                         </a>
                                     </div>

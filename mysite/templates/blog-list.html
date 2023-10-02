@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{% block title %}This is my new project home page{% endblock title %}</title>
+        <title>{% block title %}Blog homepage{% endblock title %}</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Modern Business - Start Bootstrap Template</title>
+        <title></title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -16,7 +16,7 @@
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         {% render_block "css" %}
     </head>
-    <body class="d-flex flex-column h-100">
+    <body class="d-flex flex-column">
         {% cms_toolbar %}
         <main class="flex-shrink-0">
             <!-- Navigation-->
@@ -30,7 +30,7 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'base' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-                           <!-- <li class="nav-item"><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li> -->
+                                <!-- <li class="nav-item"><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li> -->
                             <li class="nav-item"><a class="nav-link" href="{% url 'faq' %}">FAQ</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
@@ -52,46 +52,53 @@
             </nav>
             <!-- Page Content-->
             <section class="py-5">
-                <div class="container px-5 my-5">
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Our Work</h1>
-                        <p class="lead fw-normal text-muted mb-0">Company portfolio</p>
-                    </div>
-                    <div class="row gx-5">
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
+                <div class="container px-5">
+                    <h1 class="fw-bolder fs-5 mb-4">Blog Home</h1>
+                    <div class="card border-0 shadow rounded-3 overflow-hidden">
+                        <div class="card-body p-0">
+                            <div class="row gx-0">
+                                <div class="col-lg-6 col-xl-5 py-lg-5">
+                                    <div class="p-4 p-md-5">
+                                        <div class="h2 fw-bolder">All Blogs</div>
+                                        <p>This is where to find all the blogs I've written up to this point</p>
+                                        <a class="stretched-link text-decoration-none" href="{% url 'blog-home' %}">
+                                            <i class="bi bi-arrow-left"></i>
+                                            Back
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-7"><div class="bg-featured-blog" style="background-image: url('https://dummyimage.com/700x350/343a40/6c757d')"></div></div>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-5 mb-lg-0">
-                                <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative">
-                                <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
-                            </div>
-                        </div>
+                        </div>                            
                     </div>
                 </div>
             </section>
+
             <section class="py-5 bg-light">
-                <div class="container px-5 my-5">
-                    <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
-                    <a class="btn btn-lg btn-primary" href="#!">Contact us</a>
+                <div class="container px-5">
+                    <div class="row gx-5">
+                        <div class="col-xl-8">
+                            <!-- News item-->
+                            <div class="mb-4">
+                                <div class="small text-muted">MM/DD/YY</div>
+                                <a class="link-dark" href="{% url 'First_Blog' %}"><h3>1st blog</h3></a>
+                            </div>
+                            <!-- News item-->
+                            <div class="mb-5">
+                                <div class="small text-muted">MM/DD/YY</div>
+                                <a class="link-dark" href="#!"><h3>This should not be this complicated....</h3></a>
+                            </div>
+                            <!-- News item-->
+                            <div class="mb-5">
+                                <div class="small text-muted">MM/DD/YY</div>
+                                <a class="link-dark" href="#!"><h3>It's been over 2 months and I'm struggling with the most basic of functionality, like hyperlinks or configuring the settings file</h3></a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </section>
-        </main>
+
         <!-- Footer-->
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">

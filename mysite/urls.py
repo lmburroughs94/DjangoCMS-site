@@ -18,8 +18,11 @@ urlpatterns = [
     path('faq', views.faq, name='faq'),  
     path('blog-home', views.blog_home, name='blog-home'), 
     path('blog-post', views.blog_post, name='blog-post'), 
+    path('blog-list', views.blog_list, name='blog-list'), 
     path('portfolio-overview', views.portfolio_overview, name='portfolio-overview'), 
-    path('portfolio-item', views.portfolio_item, name='portfolio-item'), 
+    path('portfolio-item', views.portfolio_item, name='portfolio-item'),
+    
+    path('First_Blog', views.First_Blog, name='First_Blog'), 
 ]
 
 

@@ -28,3 +28,9 @@ def portfolio_overview(request):
 
 def portfolio_item(request):
     return render(request, "portfolio-item.html")
+
+def blog_list(request):
+    return render(request, "blog-list.html")
+
+def First_Blog(request):
+    return render(request, "templates/blogs/First_Blog.html")

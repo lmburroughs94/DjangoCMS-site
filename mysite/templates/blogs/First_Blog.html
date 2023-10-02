@@ -1,0 +1,169 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Blog homepage{% endblock title %}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Modern Business - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        {% render_block "css" %}
+    </head>
+    <body class="d-flex flex-column">
+        {% cms_toolbar %}
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{% url 'base' %}">Start Bootstrap</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            {% show_menu 0 100 100 100 %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'base' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                                             <!-- <li class="nav-item"><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li> -->
+                            <li class="nav-item"><a class="nav-link" href="{% url 'faq' %}">FAQ</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="{% url 'blog-home' %}">Blog Home</a></li>
+                                </ul>
+                                {% block content %}{% endblock content %}
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                    <li><a class="dropdown-item" href="{% url 'portfolio-overview' %}">Portfolio Overview</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'portfolio-item' %}">Portfolio Item</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page Content-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-3">
+                            <div class="d-flex align-items-center mt-lg-5 mb-4">
+                                <img class="img-fluid rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
+                                <div class="ms-3">
+                                    <div class="fw-bold">L.M. Burroughs</div>
+                                    <div class="text-muted">Opinion</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <!-- Post content-->
+                            <article>
+                                <!-- Post header-->
+                                <header class="mb-4">
+                                    <!-- Post title-->
+                                    <h1 class="fw-bolder mb-1">Why I'm probably not going to use DjangoCMS</h1>
+                                    <!-- Post meta content-->
+                                    <div class="text-muted fst-italic mb-2">August 28th, 2023</div>
+                                    <!-- Post categories-->
+                                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
+                                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+                                </header>
+                                <!-- Preview image figure-->
+                                <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
+                                <!-- Post content-->
+                                <section class="mb-5">
+                                    <p class="fs-5 mb-4">Web development is a valuable, highly sought after skill. One that helps set technicians apart from one another. 
+                                        Recently, I've been interested in the idea of getting better with my web development skills, and finally putting together a website.
+                                        I have an understanding of HTML, CSS, and some Javascript from highschool, in addition to learning a little bit of Python on my own. I realized the kind of site I'd want would take a little more than hand-coding every page, as the site would be too big to manage before too long, so I looked to a CMS (content management system) to try and resolve my issue, and decided on Django CMS. My reasoning was I wanted to have SOME control over how my site functioned, and maintain some level of challenge.
+                                    </p>
+                                    <p class="fs-5 mb-4">So I started down the path of learning Django CMS, and maybe I'm just a newbie and it shines brighter than I realize, but I can't help but feel as though certain aspects of Django CMS are made a little harder than necessary. 
+                                        For starters it can't generate new pages the way something like Wordpress can, and it's more akin to a customizeable text box than any customizeable page I've ever seen before.
+                                        what frustrates me is that I have seen plenty of demo screenshots swearing by the ease of Django CMS, but I have not seen many tutorials that actually cover the same things these screenshots are promising.
+                                        Which brings me to the learning and tutorial side of this CMS. 
+                                        Maybe I wasn't looking in the right spots, but it seemed to me like all the tutorials that I have found are either not incredibly clear in their explanation, or the tutorial is possibly so outdated that the information covered doesn't apply anymore.
+                                        As an example of what I'm talking about, I found a tutorial site for DjangoCMS that had two different articles with almost identical titles, but only one would install Django CMS onto your machine. The other one installed vanilla Django, but the steps are nearly identical
+                                    
+                                        <p class="fs-5 mb-4">Now don't get me wrong, Python is a great programming language, and Django CMS is an excellent backend system that's allowed me a server to test and rework my front end presentation, but depending on what one wants to do, it may be a little clunky.</p>
+                                    
+                                    <p class="fs-5 mb-4">For example, Django CMS allows users to use HTML, and CSS templates to lay out their site however they see fit, <b>BUT</b> in order for these templates to be seen by Django CMS, they must be wrapped up in a few templating tags, otherwise the page will not render and the site will crash. In adittion to that, EVERY. SINGLE. PAGE. that you expect to use in the site has to be registered both in your "views" and "urls" folder in order for the hyperlinks to work correctly.
+                                    <p class="fs-5 mb-4">Which unfortunately actually brings me back to my original issue of not wanting to reinvent the wheel and manually change EVERY aspect of my site for a new entry. I think I've had my fill today when I realized I couldn't call a file in a different directory. I can see the tutorial on how to do it for HTML, and everytime I change something in the URLS file I seem to get closer, but the only way I can make the page behave is to crowd the "templates" folder. I am not sure why there is no other way I've found to reference this file. The closest I can get renders the file without any of the styling, so I have given up on trying altogether. Normally I wouldn't let a singular set back stop me from doing something, as I've been at this website project since April, but it just feels like the roadblocks I KEEP coming up against revolve around Django CMS as a technology, and I think I can finally just admit that this may not be the platform for me.
+                                    So, I don't think I'll use Django CMS for the time being. Maybe I'm using it wrong, maybe it's the wrong platform for me, but I can't help but feel even if I were a seasoned developer, this seems a little too tedious for something that's supposed to be happening quickly
+                                    <p class="fs-5 mb-4">I never understood why some pepople talk about "The Django Way" but after a few weeks of rolling around in the documentation I think I can understand why now.</p>
+                                </section>
+                            </article>
+                            <!-- Comments section-->
+                            <section>
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <!-- Comment form-->
+                                        <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                                        <!-- Comment with nested comments-->
+                                        <div class="d-flex mb-4">
+                                            <!-- Parent comment-->
+                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            <div class="ms-3">
+                                                <div class="fw-bold">Commenter Name</div>
+                                                If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
+                                                <!-- Child comment 1-->
+                                                <div class="d-flex mt-4">
+                                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                    <div class="ms-3">
+                                                        <div class="fw-bold">Commenter Name</div>
+                                                        And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
+                                                    </div>
+                                                </div>
+                                                <!-- Child comment 2-->
+                                                <div class="d-flex mt-4">
+                                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                    <div class="ms-3">
+                                                        <div class="fw-bold">Commenter Name</div>
+                                                        When you put money directly to a problem, it makes a good headline.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single comment-->
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            <div class="ms-3">
+                                                <div class="fw-bold">Commenter Name</div>
+                                                When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2023</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
